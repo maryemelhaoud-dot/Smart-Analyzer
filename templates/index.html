@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OCP Smart Analyzer</title>
+  <title>Smart Analyzer</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
@@ -271,7 +271,7 @@ async function loadLots() {
   const lots = await res.json();
   const el   = document.getElementById('table-lots');
   if (!lots || lots.length === 0) {
-    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div>Aucun lot enregistré.<br>Faites une prédiction pour commencer !</div>`;
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon"></div>Aucun lot enregistré.<br>Faites une prédiction pour commencer !</div>`;
     return;
   }
   const cls = { A:'q-a', B:'q-b', C:'q-c' };
