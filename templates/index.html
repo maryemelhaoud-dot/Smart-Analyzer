@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Analyzer</title>
+  <title>OCP Smart Analyzer</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
@@ -149,8 +149,8 @@
 <main class="main">
   <div class="topbar">
     <div>
-      <div class="page-title">Dashboard — <span>Juin 2026</span></div>
-      <div class="page-subtitle">Site EL JADIDA · Juin 2026</div>
+      <div class="page-title">Dashboard — <span id="current-month-title">Juin 2026</span></div>
+      <div class="page-subtitle">Site EL JADIDA · <span id="current-month-subtitle">Juin 2026</span></div>
     </div>
   </div>
 
@@ -249,6 +249,12 @@
 </main>
 
 <script>
+const MOIS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const now = new Date();
+const moisActuel = `${MOIS[now.getMonth()]} ${now.getFullYear()}`;
+document.getElementById('current-month-title').textContent = moisActuel;
+document.getElementById('current-month-subtitle').textContent = moisActuel;
+
 const COLORS   = { A:'#00c875', B:'#0ea5e9', C:'#e05c5c' };
 const MESSAGES = {
   A: 'Lot conforme aux standards',
