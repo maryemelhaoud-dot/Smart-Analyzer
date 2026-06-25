@@ -4,11 +4,6 @@ import random
 random.seed(42)
 
 def determine_quality(p2o5, humidite, temperature):
-    """
-    - Qualité A : haute concentration P2O5, faible humidité, température maîtrisée
-    - Qualité B : valeurs intermédiaires
-    - Qualité C : faible concentration, humidité élevée, température élevée
-    """
     score = 0
 
     if p2o5 >= 31:
@@ -59,7 +54,6 @@ with open("data/phosphate_data.csv", "w", newline="", encoding="utf-8") as f:
 
 print(f"Dataset généré : {len(rows)} lignes -> data/phosphate_data.csv")
 
-# Petit résumé
 from collections import Counter
 counts = Counter(r["qualite"] for r in rows)
 print("Répartition des qualités :", dict(counts))
